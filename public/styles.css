@@ -1,0 +1,638 @@
+/* ==========================================================================
+   ====== AIMA AROMAS - SPA ESTÉTICA MINIMALISTA ======
+   ========================================================================== */
+
+/* --- GLOBALS --- */
+:root {
+    --color-fondo: #FDFBF9;
+    --color-blanco: #FFFFFF;
+    --color-rojo: #F2385A;
+    /* Rojo Coral / Highlight */
+    --color-naranja: #F5A503;
+    /* Naranja Highlight */
+    --color-turquesa: #56D9CD;
+    --color-azul-oscuro: #5A4A42;
+    /* Tierra Oscuro / Text */
+    --color-text-main: #5A4A42;
+    /* Alias retrocompatible (tierra = text-main) */
+    --color-tierra-oscuro: #5A4A42;
+    --color-tierra-medio: #D7CCC8;
+    --border-radius-main: 25px;
+    --box-shadow-main: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --transition-main: all 0.3s ease;
+}
+
+img, svg, picture { 
+    max-width: 100% !important; 
+    display: block; 
+    height: auto; 
+}
+.card-img-top, .img-grid { 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    border-radius: 15px; 
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-text-main);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.subtitle {
+    font-weight: 300;
+    color: var(--color-azul-oscuro);
+}
+
+p,
+span,
+td,
+th,
+label,
+input,
+select,
+textarea {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+a {
+    color: var(--color-text-main);
+    text-decoration: none;
+    transition: var(--transition-main);
+}
+
+a:hover {
+    color: var(--color-turquesa);
+}
+
+/* --- NAV --- */
+.navbar-aima {
+    background-color: var(--color-blanco);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    padding: 15px 0;
+    z-index: 1050;
+}
+
+.navbar-aima .nav-link {
+    color: var(--color-text-main);
+    font-weight: 500;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: var(--border-radius-main);
+    transition: var(--transition-main);
+}
+
+.navbar-aima .nav-link:hover {
+    background-color: var(--color-fondo);
+    color: var(--color-turquesa);
+}
+
+.navbar-aima .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-text-main);
+    letter-spacing: 1px;
+}
+
+.navbar-aima .btn-nav-action {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: var(--transition-main);
+}
+
+.navbar-aima .btn-nav-action:hover {
+    background-color: #d12e4c;
+    /* Darker red */
+    transform: translateY(-2px);
+    color: var(--color-blanco);
+}
+
+/* --- CARDS & IMAGES (MERCADO LIBRE STYLE) --- */
+.card-aima {
+    background: var(--color-blanco);
+    border: none;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-main);
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.card-aima:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-turquesa);
+}
+
+.card-aima-img-container {
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto 20px auto;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+}
+
+.card-aima-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-title-aima {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-price-aima {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-azul-oscuro);
+    text-align: center;
+    margin-top: auto;
+}
+
+/* --- BOTONES (GENÉRICOS) --- */
+.btn-primary {
+    background-color: var(--color-naranja) !important;
+    border-color: var(--color-naranja) !important;
+    color: var(--color-blanco) !important;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: var(--transition-main);
+}
+.btn-primary:hover {
+    background-color: #d88d02 !important;
+    border-color: #d88d02 !important;
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    background-color: var(--color-turquesa) !important;
+    border-color: var(--color-turquesa) !important;
+    color: var(--color-blanco) !important;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: var(--transition-main);
+}
+.btn-secondary:hover {
+    background-color: #45b8ad !important;
+    border-color: #45b8ad !important;
+    transform: translateY(-2px);
+}
+
+.btn-aima {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-weight: 500;
+    transition: var(--transition-main);
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-aima:hover {
+    background-color: #d12e4c;
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+.btn-aima-outline {
+    background-color: transparent;
+    color: var(--color-azul-oscuro);
+    border: 2px solid var(--color-azul-oscuro);
+    border-radius: 50px;
+    padding: 10px 22px;
+    font-weight: 500;
+    transition: var(--transition-main);
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-aima-outline:hover {
+    background-color: var(--color-azul-oscuro);
+    color: var(--color-blanco);
+}
+
+/* --- TABLAS (VERPEDIDOS & CARRITO) --- */
+.table-container-aima {
+    background: var(--color-blanco);
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    padding: 25px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+.table-aima th {
+    font-weight: 700;
+    color: var(--color-azul-oscuro);
+    border-bottom: 2px solid var(--color-fondo);
+}
+
+.table-aima td {
+    vertical-align: middle;
+    font-weight: 300;
+}
+
+.img-thumbnail-aima {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.row-finalizada {
+    background-color: rgba(86, 217, 205, 0.1);
+    /* turquesa suave */
+}
+
+.row-cancelada {
+    background-color: rgba(242, 56, 90, 0.05);
+    /* rojo suave */
+}
+
+/* --- FORMULARIOS (CHECKOUT & ALTA PRODUCTO) --- */
+.form-container-aima {
+    background: var(--color-blanco);
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    padding: 35px;
+    margin-bottom: 40px;
+}
+
+.form-label-aima {
+    font-weight: 500;
+    color: var(--color-azul-oscuro);
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.form-control-aima {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #EBEBEB;
+    border-radius: var(--border-radius-main);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--color-text-main);
+    background-color: var(--color-blanco);
+    transition: var(--transition-main);
+    margin-bottom: 20px;
+}
+
+.form-control-aima:focus {
+    outline: none;
+    border-color: var(--color-turquesa);
+    box-shadow: 0 0 0 3px rgba(86, 217, 205, 0.2);
+}
+
+/* --- EXTRAS & UTILIDADES --- */
+.badge-aima {
+    background-color: var(--color-naranja);
+    color: var(--color-blanco);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.empty-state-aima {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--color-blanco);
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+}
+
+.empty-state-icon {
+    font-size: 3rem;
+    color: var(--color-azul-oscuro);
+    margin-bottom: 20px;
+}
+
+/* Modal styling if any */
+.modal-content-aima {
+    border-radius: var(--border-radius-main);
+    border: none;
+    box-shadow: var(--box-shadow-main);
+}
+
+/* Badges de Estado Específicos */
+.badge-pagado {
+    background-color: rgba(86, 217, 205, 0.1);
+    color: var(--color-turquesa);
+    border: 1px solid var(--color-turquesa);
+}
+
+.badge-pendiente {
+    background-color: rgba(245, 165, 3, 0.1);
+    color: var(--color-naranja);
+    border: 1px solid var(--color-naranja);
+}
+
+.badge-cancelado {
+    background-color: rgba(242, 56, 90, 0.1);
+    color: var(--color-rojo);
+    border: 1px solid var(--color-rojo);
+}
+
+.badge-estado-entrega {
+    background-color: #f5f5f5;
+    color: var(--color-azul-oscuro);
+    border: 1px solid var(--color-azul-oscuro);
+}
+
+.badge-procesando {
+    background-color: #e3f2fd;
+    color: var(--color-azul-oscuro);
+    border: 1px solid var(--color-azul-oscuro);
+}
+
+.badge-finalizado {
+    background-color: rgba(86, 217, 205, 0.1);
+    color: var(--color-turquesa);
+    border: 1px solid var(--color-turquesa);
+}
+
+/* --- CLASES UTILITARIAS CONSOLIDADAS --- */
+.text-rojo {
+    color: var(--color-rojo) !important;
+}
+
+.text-naranja {
+    color: var(--color-naranja) !important;
+}
+
+.text-turquesa {
+    color: var(--color-turquesa) !important;
+}
+
+.text-azul {
+    color: var(--color-azul-oscuro) !important;
+}
+
+.bg-crema {
+    background-color: var(--color-fondo) !important;
+}
+
+/* Control de Cantidad y Botón + en Catálogo */
+.qty-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.qty-input {
+    width: 60px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid var(--color-azul-oscuro);
+    padding: 5px;
+    font-weight: 500;
+}
+
+.btn-pastilla-add {
+    background-color: var(--color-turquesa);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: var(--transition-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-pastilla-add:hover {
+    background-color: #45b8ad;
+    transform: scale(1.05);
+}
+
+/* Header Home Carousel Override */
+.carousel-caption-aima {
+    background: rgba(253, 251, 249, 0.85);
+    /* Crema semi-transparente */
+    border-radius: var(--border-radius-main);
+    padding: 30px;
+    color: var(--color-text-main);
+    box-shadow: var(--box-shadow-main);
+}
+
+.carousel-caption-aima h2 {
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.carousel-caption-aima p {
+    font-weight: 300;
+    color: var(--color-azul-oscuro);
+    font-size: 1.1rem;
+}
+
+/* --- HOME: GRID DE PRODUCTOS (SECCIÓN INFERIOR) --- */
+.home-grid-img {
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: var(--transition-main);
+}
+
+.home-grid-item {
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.home-grid-item:hover .home-grid-img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-grid-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+    margin-top: 10px;
+}
+
+.home-section-title {
+    border-bottom: 2px solid var(--color-fondo);
+    padding-bottom: 10px;
+}
+
+/* --- ADMIN: GESTIONAR BANNER --- */
+.banner-admin-card {
+    background-color: var(--color-blanco);
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    padding: 30px;
+    border: none;
+}
+
+.banner-thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid var(--color-fondo);
+    box-shadow: var(--box-shadow-main);
+}
+
+.banner-slide-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-azul-oscuro);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.banner-save-btn {
+    background-color: var(--color-naranja);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-weight: 500;
+    width: 100%;
+    transition: var(--transition-main);
+    cursor: pointer;
+}
+
+.banner-save-btn:hover {
+    background-color: #d88d02;
+    transform: translateY(-2px);
+}
+
+/* --- UTILIDAD: INPUT DE SOLO LECTURA (EMAIL, ETC.) --- */
+.input-readonly-aima {
+    background-color: #f8f9fa !important;
+    cursor: not-allowed !important;
+    border-color: #e0e0e0 !important;
+    color: #6c757d !important;
+}
+
+/* --- ADMIN PANEL: CARDS DE ACCESO RÁPIDO --- */
+.admin-panel-card {
+    border-radius: var(--border-radius-main);
+    border: none;
+    background: var(--color-blanco);
+    box-shadow: var(--box-shadow-main);
+    transition: var(--transition-main);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.admin-panel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel-card h4 {
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin: 0;
+}
+
+/* --- ADMIN DASHBOARD (TIERRA CALMA) --- */
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 80px;
+    background-color: var(--color-fondo);
+    overflow: hidden;
+}
+
+.dash-main {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.kpi-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.kpi-card {
+    background: var(--color-blanco);
+    border-radius: var(--border-radius-main);
+    padding: 20px;
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--box-shadow-main);
+    border: 1px solid var(--color-fondo);
+}
+
+.kpi-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-blanco);
+}
+
+.kpi-icon.blue { background-color: var(--color-turquesa); }
+.kpi-icon.amber { background-color: var(--color-naranja); }
+.kpi-icon.green { background-color: #A3B19B; } /* Earthy Sage Green */
+
+.kpi-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-tierra-oscuro);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.kpi-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
